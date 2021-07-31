@@ -12,4 +12,5 @@
 
   <a href="/">Go back</a>
 
+
 </x-layout>
