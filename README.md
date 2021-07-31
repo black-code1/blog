@@ -7,6 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Laravel library
+
+## Clockwork
+
+`composer require itsgoingd/clockwork`
+
+> then add browser extension
+
 # ROUTE MODEL BINDING
 
 ## Wildcard name should match the variable name
