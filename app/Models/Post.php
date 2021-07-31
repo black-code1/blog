@@ -12,6 +12,11 @@ class Post extends Model
     protected $guarded = [];
     // protected $fillable = ['title', 'excerpt', 'body', 'id'];
 
+    protected function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
