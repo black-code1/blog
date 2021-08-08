@@ -23,7 +23,7 @@ Route::get('/', function () {
         'categories' => Category::all()
 
     ]);
-})->name('home');
+})->name('home'); //named route
 
 Route::get('posts/{post:slug}', function (Post $post) {
     // Find a post by its slug and pass it to a view called "post"
