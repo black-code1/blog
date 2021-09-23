@@ -13,6 +13,27 @@ class Post extends Model
     // protected $fillable = ['title', 'excerpt', 'body', 'id'];
     protected $with = ['category', 'author'];
 
+   /* public function scopeFilter($query) // Post::newQuery()->filter()
+    //{
+        // $query->where
+        if (request('search')){
+            $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
+
+    }*/
+
+     public function scopeFilter($query, array $filters) // Post::newQuery()->filter()
+    {
+        
+        $query->when($filters['search'] ?? false, fn($query, $search) => 
+            $query
+                ->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%'));
+
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
